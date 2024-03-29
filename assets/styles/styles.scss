@@ -1,0 +1,387 @@
+// Variables
+$black: #000000;
+$dark-purple: #5c2dd5;
+$purple: #7945ff;
+$red: #fd6687;
+$yellow: #ffce67;
+$white: #ffffff;
+
+$border: 3px solid black;
+$border-radius: 40px;
+$box-shadow: 0px 10px 0px 0px #000000;
+
+$gameBoardHeight: 636px;
+$gameBoardWidth: 632px;
+$gameBoardBlackHeight: 594px;
+$gridContainerWidth: 592px;
+$gridContainerHeight: 504px;
+$gridCellWidth: 70px;
+$gridCellHeight: 75px;
+
+$gameBoardHeight-small: 310px;
+$gameBoardWidth-small: 335px;
+$gameBoardBlackHeight-small: 335px;
+$gridContainerWidth-small: 313px;
+$gridContainerHeight-small: 267px;
+$gridCellWidth-small: 33px;
+$gridCellHeight-small: 33px;
+
+$headingL: 56px;
+$headingM: 24px;
+$headingS: 20px;
+$headingXS: 16px;
+
+$headingL-small: calc($headingL / 2);
+$headingM-small: calc($headingM / 2);
+$headingS-small: calc($headingS / 2);
+$headingXS-small: calc($headingXS / 2);
+
+// Mixins
+@mixin borderStyles {
+  border: $border;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+}
+
+// Bootstrap modifications
+
+// Styles
+
+html,
+body {
+  height: 100%;
+}
+body {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 21px;
+  background-color: $dark-purple;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  // overflow-x: hidden;
+  position: relative;
+}
+
+#appBody {
+  // width: 100vw;
+  // height: 100%;
+  // position: relative;
+}
+
+.background {
+  // position: absolute;
+  // // bottom: 0;
+  // left: 0;
+  width: 100%;
+  min-height: 234px;
+  border-radius: 60px 60px 0 0;
+  background-color: $dark-purple;
+  z-index: -1;
+  @media (min-width: 992px) {
+    min-height: 200px;
+  }
+  position: absolute;
+  bottom: 0;
+  // width: 100%;
+}
+
+#initialMenu {
+  background-color: $purple;
+  width: 100vw;
+  height: 100vh;
+
+  @media only screen and (min-width: 481px) {
+    @include borderStyles;
+    margin: 0 auto;
+    width: 480px;
+    height: 435px;
+  }
+}
+
+.custom-btn {
+  border: 3px solid $dark-purple;
+  border-radius: 20px;
+  box-shadow: 0px 10px 0px 0px $dark-purple;
+  padding: 21px 20px;
+  font-size: $headingM;
+  font-weight: bold;
+  text-align: left;
+}
+
+.btn-yellow,
+.btn-yellow:hover,
+.btn-yellow:active,
+.btn-yellow:focus {
+  background-color: $yellow;
+}
+
+.btn-white,
+.btn-white:hover,
+.btn-white:active,
+.btn-white:focus {
+  background-color: $white;
+}
+
+.btn-red,
+.btn-red:hover,
+.btn-red:active,
+.btn-red:focus {
+  color: $white;
+  background-color: $red;
+}
+
+.header__button {
+  color: $white;
+  border-radius: 20px;
+  background-color: $dark-purple;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: $headingXS;
+  cursor: pointer;
+}
+
+.header__logo {
+  width: 52px;
+  height: 52px;
+}
+
+.player_div {
+  background-color: $white;
+  border-radius: 20px !important;
+  @include borderStyles;
+
+  position: relative;
+
+  width: 142px;
+  height: 81px;
+
+  justify-content: space-evenly !important;
+
+  @media (min-width: 575px) {
+    width: 272px;
+    height: 100px;
+  }
+  @media (min-width: 992px) {
+    padding-top: 24px;
+    width: 141px;
+    height: 160px;
+  }
+}
+
+.player_div__img {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+
+  @media (min-width: 992px) {
+    top: -24px;
+  }
+}
+
+.player_div__img-left {
+  @media (max-width: 992px) {
+    left: -24px;
+  }
+}
+
+.player_div__img-right {
+  @media (max-width: 992px) {
+    right: -24px;
+  }
+}
+
+h3 {
+  font-size: $headingS-small;
+  font-weight: bold;
+  @media (min-width: 992px) {
+    font-size: $headingS;
+  }
+}
+
+h2 {
+  font-size: $headingL-small;
+  font-weight: bold;
+  @media (min-width: 992px) {
+    font-size: $headingL;
+  }
+}
+
+#gameBoard {
+  position: relative;
+  width: $gameBoardWidth-small;
+  height: $gameBoardHeight-small;
+  margin: 0 auto;
+  @media (min-width: 632px) {
+    height: $gameBoardHeight;
+    width: $gameBoardWidth;
+  }
+}
+
+#gameBoardWhite {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: $gameBoardWidth-small;
+  height: 335px;
+  background-image: url(../images/board-layer-white-small.svg);
+  background-repeat: no-repeat;
+
+  @media (min-width: 632px) {
+    height: 584px;
+    background-image: url(../images/board-layer-white-large.svg);
+    width: $gameBoardWidth;
+  }
+}
+
+#gameBoardBlack {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: $gameBoardWidth-small;
+  height: $gameBoardBlackHeight-small;
+  background-image: url(../images/board-layer-black-small.svg);
+  background-repeat: no-repeat;
+
+  @media (min-width: 632px) {
+    background-image: url(../images/board-layer-black-large.svg);
+    width: $gameBoardWidth;
+    height: $gameBoardBlackHeight;
+  }
+}
+
+.grid-container {
+  width: $gridContainerWidth-small;
+  height: $gridContainerHeight-small;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: repeat(7, $gridCellWidth-small);
+  grid-template-rows: repeat(6, $gridCellHeight-small);
+  grid-row-gap: 13.5px;
+  grid-column-gap: 13.5px;
+  margin-top: 9px;
+  margin-left: 9px;
+
+  @media (min-width: 632px) {
+    width: $gridContainerWidth;
+    height: $gridContainerHeight;
+    grid-row-gap: 13px;
+    grid-column-gap: 17.5px;
+    margin-top: 17px;
+    margin-left: 20px;
+    grid-template-columns: repeat(7, $gridCellWidth);
+    grid-template-rows: repeat(6, $gridCellHeight);
+  }
+}
+
+.grid-container div {
+  width: 100%;
+  height: 100%;
+}
+
+.turn_div {
+  color: $white;
+  position: absolute;
+  bottom: -125px;
+  width: 170px;
+  height: 150px;
+  z-index: 3;
+  padding-top: 15px;
+  @media (min-width: 768px) {
+    bottom: -50px;
+  }
+}
+
+h4 {
+  font-size: $headingXS-small;
+  @media (min-width: 992px) {
+    font-size: $headingXS;
+  }
+  font-weight: bold !important;
+}
+
+.turn_div {
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  &.playerOne {
+    background-image: url("../images/turn-background-red.svg");
+    color: $white;
+  }
+  &.playerTwo {
+    background-image: url("../images/turn-background-yellow.svg");
+    color: $black;
+  }
+  &.printWinner {
+    background-image: none;
+    background-color: $white;
+    border: $border;
+    @include borderStyles;
+    color: $black;
+    width: 285px;
+  }
+}
+
+.pulse {
+  transform: scale(1);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.8);
+  }
+
+  70% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0.8);
+  }
+}
+
+.modal-title {
+  font-size: $headingL;
+  color: $black;
+  font-weight: bold;
+}
+
+.modal-content {
+  @include borderStyles;
+  font-weight: normal;
+}
+
+.modal-content h3 {
+  color: $purple;
+}
+
+.modal-content a {
+  position: absolute;
+  right: calc(50% - (75px / 2));
+}
+
+.modal-backdrop {
+  background-color: $dark-purple;
+  opacity: 1 !important;
+}
+#pauseModal h1 {
+  color: $white;
+}
+#pauseModal .modal-content {
+  background-color: $purple;
+}
+
+.opacity {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+
+  opacity: 0.5 !important;
+}
