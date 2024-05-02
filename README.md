@@ -1,5 +1,5 @@
 # Connect Four
-
+![Connect Four Gameplay](connect-4.gif)
 ## Overview
 This project is a web-based implementation of the Connect Four game, utilizing HTML, CSS, and JavaScript, with responsive design facilitated by Bootstrap.
 
