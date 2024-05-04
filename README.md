@@ -1,5 +1,6 @@
 # Connect Four
 ![Connect Four Gameplay](connect-4.gif)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ## Overview
 This project is a web-based implementation of the Connect Four game, utilizing HTML, CSS, and JavaScript, with responsive design facilitated by Bootstrap.
 
@@ -35,3 +36,6 @@ The game board is constructed using a grid layout, and the game logic includes f
 - Determine if the board is full
 
 Additionally, a timer is implemented for each player's turn, which can be paused and resumed as needed.
+
+## Continuous improvements
+In the future I want to develop a vs Computer mode.
